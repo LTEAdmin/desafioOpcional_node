@@ -5,7 +5,7 @@ const path = require("path");
 const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => { 
-
+    res.sendFile(path.join(__dirname, "index.html"));
 })
 
 app.get("/crear", (req, res) => {
@@ -26,9 +26,13 @@ app.get("/eliminar", (req, res) => {
     res.send("Archivo eliminado");
 })
 
-app.get("/modificar", (req, res) => {
-    const archivos = fs.readdirSync(path.join(__dirname));  
-    res.send(archivos);
+app.get("/renombrar", (req, res) => {
+    const { nombre, nuevoNombre } = req.query;
+    fs.renameSync(
+      path.join(__dirname, nombre),
+      path.join(__dirname, nuevoNombre)
+    );  
+    res.send("Archivos renombrados " );
 })  
 
 
