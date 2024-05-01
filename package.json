@@ -1,0 +1,15 @@
+{
+  "name": "desafio-opcional",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js"
+  },
+  "keywords": [],
+  "author": "Alejandra Flaño",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
